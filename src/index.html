@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KeyForge — Password Generator</title>
+    <title>KeyForge &mdash; Password Generator</title>
 
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="../assets/images/favicon.png"
@@ -26,7 +27,66 @@
     <main>
       <h1>KeyForge &mdash; Password Generator</h1>
 
-      <input type="text" readonly />
+      <!--
+        MARK: Show Field
+      -->
+      <section class="display-container">
+        <input readonly class="display" placeholder="Password" data-password />
+
+        <button>
+          <span data-reset-pass></span>
+          <img src="../assets/reset.svg" alt="Regenerate password" />
+        </button>
+      </section>
+
+      <!--
+        MARK: Input Field
+      -->
+      <section class="input-container">
+        <!-- Password Length -->
+        <div class="length-container">
+          <p>Password Length</p>
+          <p data-length-number>0</p>
+        </div>
+
+        <!-- Range Slider -->
+        <input
+          type="range"
+          min="4"
+          max="16"
+          value="8"
+          class="pass-slider"
+          step="1"
+          data-range-slider
+        />
+      </section>
+
+      <!-- Checkbox Fields -->
+      <div>
+        <input type="checkbox" id="uppercase" />
+        <label for="uppercase">Include Uppercase Alphabets</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lowercase" />
+        <label for="lowercase">Include Lowercase Alphabets</label>
+      </div>
+      <div>
+        <input type="checkbox" id="numbers" />
+        <label for="numbers">Include Numbers</label>
+      </div>
+      <div>
+        <input type="checkbox" id="symbols" />
+        <label for="symbols">Include Special Symbols</label>
+      </div>
+
+      <!-- Password Section -->
+      <div class="strength-container">
+        <p>Strength</p>
+        <span data-strength-indicator></span>
+      </div>
+
+      <!-- Generate Password -->
+      <button class="btn-generate">Generate Password</button>
     </main>
 
     <script src="scripts/main.js"></script>
