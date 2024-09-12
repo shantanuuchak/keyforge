@@ -31,11 +31,21 @@
         MARK: Show Field
       -->
       <section class="display-container">
-        <input readonly class="display" placeholder="Password" data-password />
+        <input
+          class="display"
+          placeholder="Password"
+          readonly
+          data-display-password
+        />
 
-        <button>
-          <span data-reset-pass></span>
-          <img src="../assets/reset.svg" alt="Regenerate password" />
+        <button data-copy-password>
+          <span class="copy-tooltip" data-reset-pass></span>
+          <img
+            src="../assets/reset.svg"
+            alt="Regenerate password"
+            width="24"
+            height="24"
+          />
         </button>
       </section>
 
@@ -62,19 +72,19 @@
       </section>
 
       <!-- Checkbox Fields -->
-      <div>
+      <div class="check">
         <input type="checkbox" id="uppercase" />
         <label for="uppercase">Include Uppercase Alphabets</label>
       </div>
-      <div>
+      <div class="check">
         <input type="checkbox" id="lowercase" />
         <label for="lowercase">Include Lowercase Alphabets</label>
       </div>
-      <div>
+      <div class="check">
         <input type="checkbox" id="numbers" />
         <label for="numbers">Include Numbers</label>
       </div>
-      <div>
+      <div class="check">
         <input type="checkbox" id="symbols" />
         <label for="symbols">Include Special Symbols</label>
       </div>
@@ -82,7 +92,7 @@
       <!-- Password Section -->
       <div class="strength-container">
         <p>Strength</p>
-        <span data-strength-indicator></span>
+        <span class="indicator" data-strength-indicator></span>
       </div>
 
       <!-- Generate Password -->
